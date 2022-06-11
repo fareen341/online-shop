@@ -9,6 +9,7 @@ import { Video } from './HomeChildrens/Video'
 export const Home = () => {
   return (
     <div>
+        
         <Carousel />
         <HomeProduct />
         <FeatureProducts />

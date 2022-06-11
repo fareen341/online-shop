@@ -70,7 +70,7 @@ export const Header = () => {
                     </svg>
                   </a>
                   <ul className="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" style={{ borderTop: "2px solid black" }}>
-                    <li><a className="dropdown-item" href="">My account</a></li>
+                    <li><a className="dropdown-item" href="/account">My account</a></li>
                     <li><a className="dropdown-item" href="">Setting</a></li>
                     <li><a className="dropdown-item" href="">Logout</a></li>
                   </ul>

@@ -12,8 +12,10 @@ import { PageNotFound } from './MyComponents/Extra/PageNotFound';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { Login } from './MyComponents/UserRelatedStuff/Login';
 import { Register } from './MyComponents/UserRelatedStuff/Register';
+import { UserAccount } from './MyComponents/UserRelatedStuff/UserAccount';
 // import { useLocation } from 'react-router-dom'
 import './MyComponents/publicStyle.css'
+import { SingleProduct } from './MyComponents/ProductComponent/ProductChildrens/SingleProduct';
 
 
 function App() {
@@ -30,10 +32,14 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
+
+          <Route path="/product/:id" element={<SingleProduct />} />
+
           <Route path="/collection" element={<Collection />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/account" element={<UserAccount />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>

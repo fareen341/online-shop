@@ -7,8 +7,18 @@ export const Product = () => {
   return (
     <div>
       <SearchBar />
-      <SideFilter />
-      <ProductList />
+      
+      
+      <div className='container'>
+          <div className='row'>
+            <div className='col-lg-3'>
+            <SideFilter />
+            </div>
+            <div className='col-lg-8'>
+            <ProductList />
+            </div>
+          </div>
+      </div>
     </div>
   )
 }

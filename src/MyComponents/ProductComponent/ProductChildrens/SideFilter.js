@@ -6,7 +6,7 @@ export const SideFilter = () => {
         <div>
             <div className="container mt-5">
                 <div className="row justify-content-md-end">
-                    <div className="col-lg-3" >
+                    <div className="col-lg-12" >
                         <div className="flex-shrink-0 p-3 bg-white" style={{width: "280px"}}>
                             <a href="#" className="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" fill="currentColor" className="bi bi-list-ul" viewBox="0 0 16 14">
