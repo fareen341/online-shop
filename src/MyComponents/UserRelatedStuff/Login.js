@@ -5,11 +5,16 @@ import { setRecords } from '../../Features/getProduct';
 import { login, logout } from '../../Features/user';
 import { UserAccount } from './UserAccount';
 import { updateUsers } from '../../Features/getusers';
+import { useNavigate } from 'react-router-dom';
+import { setLoginUser } from '../../Features/userLoggedIn';
 
 export const Login = () => {
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
   // let derivedKey = PBKDF2.pbkdf2Sync('password', 'salt', 1, 32, 'sha512')
   const user = useSelector((state) => state.user.value);
   const getloginusers = useSelector((state) => state.getusers.value);
+  const userstate = useSelector((state) => state.userLoggedIn.value);
 
   //we need another state for this state
   const [userRegistration, setUserRegistration] = useState({
@@ -17,37 +22,41 @@ export const Login = () => {
     password: ""
   });
 
+  const getitems = localStorage.getItem('userdetail');
+  let x=JSON.parse(getitems)
+  console.log("getitems==============================================================>",x)
+  console.log("type:",typeof(x))
+
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/userapi/")
       .then((response) => {
         dispatch(updateUsers(response.data));
         console.log("api call", response.data);
-        // response.data.map((i) =>console.log(`uname:${i.username}, pswd:${i.password}`))
-        // const res = response.data.filter((x) => x.username == uname && x.password == pswd)
-        // console.log("res=", res)
-        // const res = response.data.filter((x) => x.username == "fareen" && x.password == "fareen")
-        // console.log("data===============>", res)
       })
       .catch(error => {
         console.log("error:", error)
       });
   }, []);
-
-  console.log("usereg===================>", getloginusers)
-  // const res = userRegistration.filter((x) => x.username == "fareen" && x.password == "fareen")
   
-  function resolve() {
-    if (userRegistration.username == "fareen" && userRegistration.password == "fareen") {
-      console.log("true===============>")
-      
-
-    }else{
-      console.log("false")
-    }
-    const result = getloginusers.filter((x) => x.username == "fareen" && x.password == "fareen")
+  function resolve() {    
+    const result = getloginusers.filter((x) => x.username == userRegistration.username && x.password == userRegistration.password)
     console.log("result is===========", result)
+    if(result.length != 0){      
+      // let a={"username":userRegistration.username, "password": userRegistration.password, "isAuthenticate":true}
+      localStorage.setItem('userdetail', true);
+      // setLoginUser("true")
+      navigate('/account')
+    }else{    
+      // dispatch(setLoginUser("true"));
+      alert("invalid login credential")
+    }
   }
 
+  function counter(){
+    console.log("counter called")
+    dispatch(setLoginUser(userstate+1));
+    
+  }
 
 
   const handleInput = (e) => {
@@ -59,38 +68,15 @@ export const Login = () => {
     setUserRegistration({ ...userRegistration, [names]: values })
   }
 
-  const dispatch = useDispatch();
-
-  // let uname=userRegistration.username
-  let pswd = userRegistration.password
-  console.log(pswd)
+  
 
 
 
 
   return (
     <div>
-      {/* {res} */}
+      <h1>userstate:{userstate}</h1>
       <UserAccount />
-      {/* 
-      <button
-        onClick={() => {
-          dispatch(login({ username: "fareen", password: "abcd" }));
-          //dispatch(login(here comes the payload which is new value))   this will be passed to action.payload
-        }}
-      >
-        Login
-      </button>
-
-      <button
-        onClick={() => {
-          dispatch(logout());
-        }}
-      >
-        Logout
-      </button> */}
-
-
 
       <div className="container">
         <div className="row justify-content-md-center">
@@ -118,9 +104,7 @@ export const Login = () => {
                 <label htmlFor="exampleInputPassword1" className="form-label" >Password</label>
                 <input type="password" className="form-control" name="password" id="password" value={userRegistration.password} onChange={handleInput} />
               </div>
-              <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-              </div>
+              
             </form>
 
 
@@ -139,6 +123,7 @@ export const Login = () => {
               >
                 Sign in
               </button>
+              {/* <button onClick={counter}>counter</button> */}
             </p>
             <p>Don't have an account? <a href="" className="text-decoration-none">Sign up here</a></p>
             <p className="text-center"><a href="" className="text-decoration-none"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -155,3 +140,14 @@ export const Login = () => {
     </div>
   )
 }
+
+
+// getloginusers.map((x)=>{
+//   if(x.username == userRegistration.username && x.password == userRegistration.password){
+//     navigate("/account");
+//   }
+//   else{
+//     alert("invalid uname & pwd")
+//   }
+  
+// })

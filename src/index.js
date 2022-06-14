@@ -9,6 +9,7 @@ import counterReducer from "./Features/counter";
 import getProduct from './Features/getProduct';
 import userReducer from './Features/user';
 import getusersReducer from './Features/getusers';
+import userLoggedInReducer from './Features/userLoggedIn';
 
 const store = configureStore({
   reducer:{           //reducer is function which takes in some states
@@ -17,7 +18,8 @@ const store = configureStore({
     counter: counterReducer,
     getProduct: getProduct,
     user: userReducer,
-    getusers: getusersReducer
+    getusers: getusersReducer,
+    userLoggedIn: userLoggedInReducer
   },
 });
 

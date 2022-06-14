@@ -47,3 +47,20 @@ Extra(folder)
 --------->404 page
 
 
+
+
+
+{!user && (
+            <>
+              <Route path="/account" element={<UserAccount authenticate={{}
+                // if(localStorage.getItem('userdetails')){
+                //   let x=localStorage.getItem('userdetails')
+                //   let p=JSON.parse(x)
+                //   console.log("user state",p)
+                //   setUser(p)
+                // }
+              } />} />
+              {/* <Route path="/account" element={<UserAccount />} /> */}
+            </>
+          )
+          }
