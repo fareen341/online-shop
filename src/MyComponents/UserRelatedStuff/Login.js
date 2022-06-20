@@ -75,9 +75,6 @@ export const Login = () => {
 
   return (
     <div>
-      <h1>userstate:{userstate}</h1>
-      <UserAccount />
-
       <div className="container">
         <div className="row justify-content-md-center">
           <p className="lead text-center">Sign in Here</p>

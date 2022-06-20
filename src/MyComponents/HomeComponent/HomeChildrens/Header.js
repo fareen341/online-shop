@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 
 const styles = {
   navsection: {
@@ -30,29 +32,45 @@ export const Header = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item" style={{ marginLeft: "30px" }}>
-                  <a className="nav-link" aria-current="page" href="/">Home</a>
+                  {/* <a className="nav-link" aria-current="page" href="/">Home</a> */}
+                  <Link to="/" className="nav-link">Home</Link>
+                  
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" aria-current="page" href="/contact">Contact</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="/about">About</a>
+                  {/* <a className="nav-link" aria-current="page" href="/about">About</a> */}
+                  <Link to="/about" className="nav-link">About</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="/product">Products</a>
+                  {/* <a className="nav-link" aria-current="page" href="/product">Products</a> */}
+                  <Link to="/product" className="nav-link">Products</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="/collection">Collections</a>
+                  {/* <a className="nav-link" aria-current="page" href="/collection">Collections</a> */}
+                  <Link to="/collection" className="nav-link">Collections</Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {/* <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Account
-                  </a>
+                  </a> */}
+                  <Link to="#" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</Link>
+
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a className="dropdown-item" href="/login">Sign in</a></li>
-                    <li><a className="dropdown-item" href="/register">Register</a></li>
+                    <li>
+                      {/* <a className="dropdown-item" href="/login">Sign in</a> */}
+                      <Link to="/login" className="dropdown-item">Sign in</Link>
+                    </li>
+                    <li>
+                      {/* <a className="dropdown-item" href="/register">Register</a> */}
+                      <Link to="/register" className="dropdown-item">Register</Link>
+                    </li>
                     <li><hr className="dropdown-divider" /></li>
-                    <li><a className="dropdown-item" href="/help">Help</a></li>
+                    <li>
+                      {/* <a className="dropdown-item" href="/help">Help</a> */}
+                      <Link to="/help" className="dropdown-item">Help</Link>
+                    </li>
                   </ul>
                 </li>
                 
@@ -70,7 +88,10 @@ export const Header = () => {
                     </svg>
                   </a>
                   <ul className="dropdown-menu " aria-labelledby="navbarDropdownMenuLink" style={{ borderTop: "2px solid black" }}>
-                    <li><a className="dropdown-item" href="/account">My account</a></li>
+                    <li>
+                      {/* <a className="dropdown-item" href="/account">My account</a> */}
+                      <Link to="/account" className="dropdown-item">My account</Link>
+                      </li>
                     <li><a className="dropdown-item" href="">Setting</a></li>
                     <li><a className="dropdown-item" href="">Logout</a></li>
                   </ul>
@@ -86,7 +107,6 @@ export const Header = () => {
 
 
               </ul>
-              <button className="btn btn-outline-dark" type="submit">Login</button>
             </div>
           </div>
         </nav>

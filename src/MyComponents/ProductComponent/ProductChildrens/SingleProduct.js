@@ -25,7 +25,6 @@ export const SingleProduct = () => {
 
     return (
         <div>
-            This is Profile Component for {id}
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col-lg-4 pt-5">

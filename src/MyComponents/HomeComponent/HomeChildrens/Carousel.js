@@ -18,21 +18,21 @@ export const Carousel = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src=".static/images/background-img.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
+      <img src="static/images/background-img.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
       <div className="carousel-caption d-none d-md-block" style={imgStyle}>
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src=".static/images/background-img2.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
+      <img src="static/images/background-img2.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
       <div className="carousel-caption d-none d-md-block" style={imgStyle} >
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div className="carousel-item ">
-      <img src=".static/images/background-img3.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
+      <img src="static/images/background-img3.jpg" className="d-block w-100" alt="..." height="500px" width="100%" style={{objectFit: "cover"}} />
       <div className="carousel-caption d-none d-md-block " style={imgStyle} >
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>

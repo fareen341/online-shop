@@ -9,7 +9,7 @@ import { Product } from './MyComponents/ProductComponent/Product';
 import { Collection } from './MyComponents/CollectionComponent/Collection';
 import { Help } from './MyComponents/Extra/Help';
 import { PageNotFound } from './MyComponents/Extra/PageNotFound';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import { Login } from './MyComponents/UserRelatedStuff/Login';
 import { Register } from './MyComponents/UserRelatedStuff/Register';
 import { UserAccount } from './MyComponents/UserRelatedStuff/UserAccount';
@@ -62,11 +62,16 @@ function App() {
 
 
     <div className="App">
-      <h1>User: {userstate}</h1>
+     
 
-
-      <Header />
+      
       <Router>
+      <Header />
+      {/* <nav>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
+        <Link to="/login">Login</Link>
+      </nav> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
